@@ -1,5 +1,68 @@
 # ArduPilot Project
 
+
+/***********************************************************************************************************************
+*文件说明：应用文件头文件
+*文件功能：函数任务
+*修改日期：2018-9-7
+*修改作者：cihang_uav
+*备注信息： 编译代码：./waf configure --board zuav
+*备注信息： 下载代码：./waf --targets bin/arducopter --upload
+*备注信息： 更新子模块：git submodule update --init --recursive
+*备注信息： Code commit statistics can be found here: https://github.com/ArduPilot/ardupilot/graphs/contributors
+          Wiki: http://copter.ardupilot.org/
+          Requires modified version of Arduino, which can be found here: http://ardupilot.com/downloads/?category=6
+配置秘钥：  git config --global user.name "Noneardupilot"
+          git config --global user.email  "2551804348@qq.com"
+          ssh-keygen -t rsa -C "2551804348@qq.com"
+          
+         2018-10-25:
+上传ubuntu固件到github仓库：
+          git init
+          git add .
+          git commit -m ""
+          git remote rm origin
+          git remote add origin https://github.com/Noneardupilot/ardupilot.git
+          git push -u origin master  /git push -u origin +master 
+仓库地址：  https://github.com/Noneardupilot/ardupilot
+代码修改备注：
+
+          2018-10-14:增加日本手和美国手的切换
+          2018-10-15:修改实现植保AB点控制移植，其中采用八通道进行AB点打点操作，
+          2018-10-16:修改内八上锁，外八解锁
+          2018-10-18:仿真命令：sudo apt-get install build-essential---初始化编辑器
+                             cd ArduCopter
+                             ../Tools/autotest/sim_vehicle.py --console --map
+                             output add 192.168.159.1:14550
+          2018-10-24:修复自己的SITL仿真问题：
+                             case RECOND_ZIGZAG:do_aux_function(ch_option, ch_flag);
+
+          2018-10-25:增加U型控制函数
+          2018-10-26:增加美国手，日本手切换，需要修改参数radio_mode=1，设置日本手，然后校准，radio_mode=2修改美国手
+          2018-11-7:编译IO：./waf configure --board iomcu，代码：./waf iofirmware
+          2018-11-21:增加IIC4做外部LED
+          2019-1-7:上次.bin文件：git add -f (加上文件加目录)
+          2019-1-29:
+                    git init
+                    git add README.md
+                    git commit -m "first commit"
+                    git remote rm origin
+                    git remote add origin https://github.com/UAVcihang/Copter_3.6.5_master.git
+                    git push -u origin +master 
+          2019-1-30:添加歌尔气压计SPL06—001驱动
+          2019-4-3:创建分支：git branch dev
+                   再添加到暂存区： git add .
+                   提交到版本库 git commit -m "分支的内容"
+                   提交到远程仓库 git push origin dev
+                   切换到master分支 git checkout master
+                   把dev分支合并到master分支 git merge dev
+                   提交到远程仓库 git push -u origin master
+                   
+*************************************************************************************************************************/
+
+
+
+
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ArduPilot/ardupilot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Build SemaphoreCI](https://semaphoreci.com/api/v1/ardupilot/ardupilot/branches/master/badge.svg)](https://semaphoreci.com/ardupilot/ardupilot)
